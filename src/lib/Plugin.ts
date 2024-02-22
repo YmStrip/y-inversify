@@ -9,7 +9,7 @@ export class Plugin {
 	//初始化结构
 	init(app: App<any, any>) {
 	}
-	initBind(): (data: TypeInitBindApi) => any {
+	initBindApi(): (data: TypeInitBindApi) => any {
 		return null
 	}
 	afterGet(): (data:TypeAfterGet) => any {

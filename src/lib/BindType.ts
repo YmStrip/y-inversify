@@ -1,10 +1,10 @@
 import {interfaces} from "inversify";
 
-export type BindType<T = any, List extends Record<string, any> = {}> = interfaces.BindingToSyntax<any> & List & {
+export type BindType<Data = any> = interfaces.BindingToSyntax<Data> & {
 	class: string
 	name: string
 	symbol: symbol
 	getSimpleName(): string
-	get(): T
-	lastValue: T
+	get(): Data
+	lastValue: Data
 }

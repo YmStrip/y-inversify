@@ -4,7 +4,7 @@ exports.Plugin = void 0;
 class Plugin {
     init(app) {
     }
-    initBind() {
+    initBindApi() {
         return null;
     }
     afterGet() {

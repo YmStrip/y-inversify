@@ -1,14 +1,14 @@
 {
 	"name": "y-inversify",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "inversify encapsulation",
 	"scripts": {
+		"test": "cd test & ts-node test.ts",
 		"dep": "pnpm i",
-		"tsc": "tsc && tsc --project cjs.tsconfig.json",
-		"test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1"
+		"tsc": "tsc && tsc --project cjs.tsconfig.json"
 	},
-	"main": "./cjs/lib/index.js",
-	"module": "./es/lib/index.js",
+	"main": "./cjs/index.js",
+	"module": "./es/index.js",
 	"keywords": [],
 	"author": "",
 	"license": "MIT",

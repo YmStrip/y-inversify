@@ -1,7 +1,7 @@
 export class Plugin {
     init(app) {
     }
-    initBind() {
+    initBindApi() {
         return null;
     }
     afterGet() {

@@ -4,7 +4,8 @@ import {PluginVue, PluginVueApi, PluginVueBind} from "../src/plugin/PluginVue";
 export class Org extends App<PluginVueApi, PluginVueBind> {
 	a = this.tree({
 		providerA: this.bind(),
-		providerB: this.bind()
+		providerB: this.bind(),
+		controllerA: this.bind(),
 	})
 	constructor() {
 		super("root");
@@ -13,5 +14,6 @@ export class Org extends App<PluginVueApi, PluginVueBind> {
 	}
 }
 export const org = new Org()
+
 
 

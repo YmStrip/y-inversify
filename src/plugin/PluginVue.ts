@@ -20,20 +20,17 @@ export type PluginVueBind<T = any, D extends BindType<T> = BindType<T>> = D & {
 	//获取ref类
 }
 export interface PluginVueApi {
-	setInject(func: any)
-	setProvide(func: any)
+	vue: {
+		setInject(func: any)
+		setProvide(func: any)
+	}
 }
 export class PluginVue extends Plugin {
 	protected inject;
 	protected provide;
-	//提供vue - 返回reactive 并且 提供注入函数
-	bind: PluginVueBind
-	api: {
-		vue: PluginVueApi
-	}
-	init(app: App<PluginVue['api'], PluginVue['bind']>) {
+	init(app: App<PluginVueApi, PluginVueBind>) {
 		const that = this
-		this.api.vue = {
+		app.api.vue = {
 			setInject(func: any) {
 				that.inject = func
 			},
@@ -42,7 +39,7 @@ export class PluginVue extends Plugin {
 			}
 		}
 	}
-	initBind(): (data: TypeInitBindApi) => any {
+	initBindApi(): (data: TypeInitBindApi) => any {
 		return data => {
 			const bind: PluginVueBind = <any>data.bind;
 			bind.vueRef = ref({})

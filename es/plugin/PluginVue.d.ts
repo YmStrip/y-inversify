@@ -13,17 +13,15 @@ export type PluginVueBind<T = any, D extends BindType<T> = BindType<T>> = D & {
     toVueRefValue(data: T): interfaces.BindingInWhenOnSyntax<T>;
 };
 export interface PluginVueApi {
-    setInject(func: any): any;
-    setProvide(func: any): any;
+    vue: {
+        setInject(func: any): any;
+        setProvide(func: any): any;
+    };
 }
 export declare class PluginVue extends Plugin {
     protected inject: any;
     protected provide: any;
-    bind: PluginVueBind;
-    api: {
-        vue: PluginVueApi;
-    };
-    init(app: App<PluginVue['api'], PluginVue['bind']>): void;
-    initBind(): (data: TypeInitBindApi) => any;
+    init(app: App<PluginVueApi, PluginVueBind>): void;
+    initBindApi(): (data: TypeInitBindApi) => any;
     afterGet(): (data: TypeAfterGet) => any;
 }

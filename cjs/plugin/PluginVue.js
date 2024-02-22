@@ -6,7 +6,7 @@ const vue_1 = require("vue");
 class PluginVue extends Plugin_1.Plugin {
     init(app) {
         const that = this;
-        this.api.vue = {
+        app.api.vue = {
             setInject(func) {
                 that.inject = func;
             },
@@ -15,7 +15,7 @@ class PluginVue extends Plugin_1.Plugin {
             }
         };
     }
-    initBind() {
+    initBindApi() {
         return data => {
             const bind = data.bind;
             bind.vueRef = (0, vue_1.ref)({});

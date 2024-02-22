@@ -189,6 +189,6 @@ packages:
       '@vue/compiler-dom': 3.4.15
       '@vue/compiler-sfc': 3.4.15
       '@vue/runtime-dom': 3.4.15
-      '@vue/server-renderer': 3.4.15(plugin@3.4.15)
+      '@vue/server-renderer': 3.4.15(vue@3.4.15)
       '@vue/shared': 3.4.15
     dev: false

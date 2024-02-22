@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 export class PluginVue extends Plugin {
     init(app) {
         const that = this;
-        this.api.vue = {
+        app.api.vue = {
             setInject(func) {
                 that.inject = func;
             },
@@ -12,7 +12,7 @@ export class PluginVue extends Plugin {
             }
         };
     }
-    initBind() {
+    initBindApi() {
         return data => {
             const bind = data.bind;
             bind.vueRef = ref({});
