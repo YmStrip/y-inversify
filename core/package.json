@@ -1,0 +1,20 @@
+{
+	"name": "y-inversify",
+	"version": "1.0.4",
+	"description": "inversify encapsulation",
+	"scripts": {
+		"upd": "npm publish",
+		"test": "cd test & ts-node test.ts",
+		"dep": "pnpm i",
+		"tsc": "tsc && tsc --project cjs.tsconfig.json"
+	},
+	"main": "./cjs/index.js",
+	"module": "./es/index.js",
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"peerDependencies": {
+		"reflect-metadata": "^0.2.1",
+		"inversify": "^6.0.2"
+	}
+}
